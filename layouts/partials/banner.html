@@ -12,19 +12,26 @@
                             <br>
                             <span class="cd-words-wrapper">
                                 {{ range $index, $element := .Site.Params.banner.flipText }}
-                                    {{ if eq $index 0 }}
-                                    <b class="is-visible">{{ .title }}</b>
-                                    {{else}}
-                                    <b>{{ .title }}</b>
-                                    {{end}}
+                                {{ if eq $index 0 }}
+                                <b class="is-visible">{{ .title }}</b>
+                                {{else}}
+                                <b>{{ .title }}</b>
+                                {{end}}
                                 {{ end }}
                             </span>
                         </h1>
                     </section>
-                    {{ with .Site.Params.banner.description }}<h2 class="wow fadeInUp animated" data-wow-delay=".6s">{{ . }}</h2>{{ end }}
-                    {{ if .Site.Params.banner.btn }}                    
-                        <a class="btn-lines dark light wow fadeInUp animated btn btn-default btn-green hvr-bounce-to-right" data-wow-delay=".9s"
-                            href="{{ .Site.Params.banner.btnURL }}" target="_blank">{{ .Site.Params.banner.btnText }}</a>
+                    {{ with .Site.Params.banner.description }}<h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+                        {{ . }}</h2>{{ end }}
+                    {{ with .Site.Params.banner.contact }}
+                    <h2 class="wow fadeInUp animated" data-wow-delay=".6s">
+                        <a href="mailto:{{.}}">{{ . }}</a>
+                    </h2>
+                    {{ end }}
+                    {{ if .Site.Params.banner.btn }}
+                    <a class=" btn-lines dark light wow fadeInUp animated btn btn-default btn-green
+                        hvr-bounce-to-right" data-wow-delay=".9s" href="{{ .Site.Params.banner.btnURL }}"
+                        target="_blank">{{ .Site.Params.banner.btnText }}</a>
                     {{ end }}
                 </div>
             </div>
