@@ -34,12 +34,21 @@ body {
 }
 
 ul {
-  padding-left: 0;
+  padding-left: 2em;
+  list-style-type: circle;
+}
+
+ul li::before{
+  content: "\2022";
+  width: 1em;
+  margin-left: -1em;
+  padding-right: 0.5em;
 }
 
 ul li {
+  list-style-type: circle;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   list-style: none;
 }
 
@@ -200,14 +209,14 @@ a:hover {
   background: #fff;
   color: #fff;
   transition: all 0.2s ease-out 0s;
-  padding: 15px 0;
+  padding: 3px 0;
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid #dedede;
   z-index: 10;
 }
 
 .top-bar.animated-header {
-  padding: 20px 0;
+  padding: 10px 0;
   background: #fff;
   box-shadow: none;
 }
@@ -1023,6 +1032,7 @@ article {
 
 .post-content iframe{
   max-width: 75%;
+  padding-bottom: 1em;
 }
 
 .single-post .post-content ol li,
@@ -1368,6 +1378,10 @@ article {
 #footer .social {
   text-align: right;
   margin-bottom: 0;
+}
+
+#footer .social li::before {
+  content: "";
 }
 
 #footer .social li {
